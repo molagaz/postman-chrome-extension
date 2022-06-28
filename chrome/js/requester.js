@@ -2474,7 +2474,7 @@ pm.request = {
                 $("#response-pretty-modifiers").css("display", "none")
             } else
                 e === "parsed" ? ($("#response-as-text").css("display", "none"),
-                $("#response-as-code").css("display", "block"),
+                $("#response-as-code").css("display", "inline-block"),
                 $("#response-as-preview").css("display", "none"),
                 $("#code-data").css("display", "none"),
                 $("#response-pretty-modifiers").css("display", "block"),
@@ -2633,7 +2633,7 @@ pm.request = {
             })
         },
         setFormat: function(e, t, n, r) {
-            $("#response-as-code").css("display", "block"),
+            $("#response-as-code").css("display", "inline-block"),
             $("#response-as-text").css("display", "none"),
             $("#response-as-image").css("display", "none"),
             $("#response-formatting").css("display", "block"),
@@ -2690,7 +2690,7 @@ pm.request = {
                 CodeMirror.commands.goDocStart(pm.editor.codeMirror),
                 $(window).scrollTop(0);
             if (n === "parsed")
-                $("#response-as-code").css("display", "block"),
+                $("#response-as-code").css("display", "inline-block"),
                 $("#response-as-text").css("display", "none"),
                 $("#response-as-preview").css("display", "none"),
                 $("#response-pretty-modifiers").css("display", "block");
