@@ -498,7 +498,10 @@ pm.collections = {
                     pm.urlCache.addUrl(r[o].url),
                     typeof r[o].name == "undefined" && (r[o].name = r[o].url),
                     r[o].name = limitStringLineWidth(r[o].name, 40);
-                if ("order"in e) {
+                // @since 2022-11-16
+                // 这里order为[]，会导致collection中所有的request数据不显示，
+                // 暂未找到order是从何处设置的，这里补充一个length判断规避问题
+                if (e.order && e.order.legnth > 0) {
                     var u = [];
                     for (var a = 0, f = e.order.length; a < f; a++) {
                         var l = _.find(r, function(t) {
